@@ -46,7 +46,10 @@ RUN alias ll='ls -alG'
 #RUN npm install
 
 RUN npm install -g homebridge
-RUN npm install -g homebridge-openhab
+
+# depending on your config.json you have to add your modules here!
+# RUN npm install -g homebridge-openhab
+RUN npm install -g homebridge-philipshue
 
 ##################################################
 # Start                                          #

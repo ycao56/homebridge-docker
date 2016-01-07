@@ -50,6 +50,7 @@ RUN npm install -g homebridge
 # depending on your config.json you have to add your modules here!
 # RUN npm install -g homebridge-openhab
 RUN npm install -g homebridge-philipshue
+RUN npm install -g homebridge-ninjablock-temperature
 
 ##################################################
 # Start                                          #

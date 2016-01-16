@@ -2,7 +2,7 @@ ACTION=$1
 
 if [ -z "$ACTION" ];
   then
-    echo "usage: $0 <build|run|stop|start|remove|rerun|attach|logs>";
+    echo "usage: $0 <build|run|stop|start|remove|rerun|attach|push|logs>";
     exit 1;
 fi
 

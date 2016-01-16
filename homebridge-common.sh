@@ -50,4 +50,8 @@ _logs() {
   docker logs $IMAGE_NAME
 }
 
+_push() {
+  docker push cbrandlehner/homebridge
+}
+
 eval _$ACTION

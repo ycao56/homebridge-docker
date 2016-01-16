@@ -1,6 +1,6 @@
 #FROM debian:jessie
 #FROM resin/rpi-raspbian:jessie
-MAINTAINER Patrick Busch <p@trickbusch.de>
+MAINTAINER Christian Brandlehner <christian@brandlehner.at>
 
 RUN apt-get update
 
@@ -51,6 +51,8 @@ RUN npm install -g homebridge
 # RUN npm install -g homebridge-openhab
 RUN npm install -g homebridge-philipshue
 RUN npm install -g homebridge-ninjablock-temperature
+RUN npm install -g homebridge-ninjablock-alarmstatedevice
+
 
 ##################################################
 # Start                                          #
@@ -72,4 +74,3 @@ ADD run.sh /root/run.sh
 # ADD config.json /root/.homebridge/config.json
 
 CMD ["/root/run.sh"]
-

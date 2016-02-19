@@ -51,7 +51,7 @@ _logs() {
 }
 
 _push() {
-  docker push cbrandlehner/homebridge
+  docker push cbrandlehner/homebridge:$VERSION
 }
 
 eval _$ACTION

@@ -10,3 +10,4 @@ IMAGE_NAME=homebridge-v$VERSION
 SED_COMMAND="sed -i \"/#####SPECIFIC#####/ r $SPECIFIC_FILE\" Dockerfile"
 
 source homebridge-common.sh
+rm Dockerfile

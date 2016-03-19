@@ -1,3 +1,5 @@
+[![Docker Stars](https://img.shields.io/docker/stars/cbrandlehner/homebridge.svg)](https://hub.docker.com/r/cbrandlehner/homebridge/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/cbrandlehner/homebridge.svg)](https://hub.docker.com/r/cbrandlehner/homebridge/)
 # Homebridge-Docker
 
 Docker image for Homebrigde

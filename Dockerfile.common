@@ -52,9 +52,13 @@ RUN npm install -g homebridge-ninjablock-humidity --unsafe-perm
 RUN npm install -g homebridge-ninjablock-alarmstatedevice --unsafe-perm
 RUN npm install -g homebridge-mqttswitch --unsafe-perm
 RUN npm install -g homebridge-edomoticz --unsafe-perm
+RUN npm install -g homebridge-luxtronik2 --unsafe-perm
+
 
 # Disabled as npm threw error Registry returned 404 for GET on https://registry.npmjs.org/homebridge-veralink
 # RUN npm install -g homebridge-veralink
+
+ADD installPlugins.js /root/installPlugins.js
 
 ##################################################
 # Start                                          #

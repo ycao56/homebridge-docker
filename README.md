@@ -75,3 +75,7 @@ moved configuration samtes to ./config-sample
 simplified Dockerfile and combined the previously two script files into a single script
 implemented a way to install homebridge modules at runtime without the need to include them in the docker image
 fixing a locale issue with C vs UTF-8
+###0.12
+git push problem - do not use this release
+###0.13
+should have fixed git push problem

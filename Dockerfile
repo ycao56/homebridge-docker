@@ -5,12 +5,6 @@ MAINTAINER Christian Brandlehner <christian@brandlehner.at>
 # Set environment variables                      #
 ##################################################
 
-# Ensure UTF-8
-#ENV LANGUAGE=en_US.UTF-8
-# ENV LANG en_US.UTF-8
-#ENV LANG=C
-#ENV LC_ALL en_US.UTF-8
-
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
 
@@ -22,7 +16,6 @@ RUN apt-get update
 RUN apt-get install -y apt-utils 
 RUN apt-get install -y apt-transport-https
 RUN apt-get install -y locales
-#RUN locale-gen en_US.UTF-8
 RUN apt-get install -y curl wget git python build-essential make g++ libavahi-compat-libdnssd-dev libkrb5-dev vim net-tools nano
 RUN alias ll='ls -alG'
 
@@ -48,7 +41,6 @@ RUN npm install -g homebridge-luxtronik2 --unsafe-perm
 USER root
 RUN mkdir -p /var/run/dbus
 
-# ADD config-sample/package.json /root/.homebridge/package.json
 ADD image/run.sh /root/run.sh
 
 EXPOSE 5353 51826

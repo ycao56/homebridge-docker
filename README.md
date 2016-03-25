@@ -8,6 +8,8 @@ Docker image for Homebrigde
 For details see https://github.com/nfarina/homebridge
 
 This is simply wrapping the source in a runnable Docker image for everyone that cannot install the dev environment on his machine or everyone that wants a simple containerized solution.
+If you intend to run this docker image on a Synology NAS, read this documentation:
+http://chris.brandlehner.at/Brandlehner/cab_blog.nsf/d6plinks/CBRR-A6XQUY
 
 ## Supported plugins
 homebridge-philipshue
@@ -18,6 +20,7 @@ homebridge-luxtronik2
 homebridge-mqttswitch
 homebridge-edomoticz
 homebridge-synology
+(and you can extend this list by adding more plugins in the file package.json)
 
 ## Configuration
 
@@ -79,3 +82,5 @@ fixing a locale issue with C vs UTF-8
 git push problem - do not use this release
 ###0.13
 should have fixed git push problem
+###0.14
+added link to blog and sample start script

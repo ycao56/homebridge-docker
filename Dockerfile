@@ -13,10 +13,9 @@ ENV TERM xterm
 ##################################################
 
 RUN apt-get update
-RUN apt-get install -y apt-utils 
-RUN apt-get install -y apt-transport-https
-RUN apt-get install -y locales
-RUN apt-get install -y curl wget git python build-essential make g++ libavahi-compat-libdnssd-dev libkrb5-dev vim net-tools nano
+RUN apt-get install -y apt-utils apt-transport-https locales
+RUN apt-get install -y curl wget git python build-essential make g++ libkrb5-dev vim net-tools nano
+RUN apt-get install -y avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev
 RUN alias ll='ls -alG'
 
 ##################################################

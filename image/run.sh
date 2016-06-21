@@ -12,7 +12,7 @@ else
 	echo "$file not found. You can create this file to install additional plugins not already included in the docker image."
 fi
 
-rm /var/run/dbus/pid
+rm -f /var/run/dbus/pid /var/run/avahi-daemon/pid
 
 dbus-daemon --system
 avahi-daemon -D

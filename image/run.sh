@@ -16,7 +16,8 @@ else
 fi
 
 # Any more stuff to install?
-if [ -f "install_file" ]
+if [ -f "$install_file" ]
+then
   sh $install_file
 fi
 

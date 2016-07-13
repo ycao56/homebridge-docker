@@ -26,11 +26,6 @@ RUN alias ll='ls -alG'
 
 RUN npm install -g homebridge --unsafe-perm
 
-# Depending on your config.json you have to add your modules here!
-RUN npm install -g homebridge-harmonyhub --unsafe-perm
-RUN npm install -g homebridge-nukiio --unsafe-perm
-RUN npm install -g homebridge-netatmo --unsafe-perm
-
 ##################################################
 # Start                                          #
 ##################################################

@@ -1,7 +1,5 @@
 # Homebridge on Synlogy
 
-## Installation
+This Docker image helps you to easily setup HomeBridge on your Synology.
 
-## Setup
-
-## Automated tasks
+More information: https://www.marcoraddatz.com/en/2016/07/13/run-homebridge-on-a-synology/

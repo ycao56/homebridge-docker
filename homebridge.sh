@@ -4,6 +4,7 @@ BASEDIR=$(dirname $0)
 cd $BASEDIR
 
 VERSION=$(<VERSION)
+CONTAINER_NAME="marcoraddatz/synology-homebridge"
 IMAGE_NAME=homebridge-v$VERSION
 
 ACTION=$1
@@ -16,12 +17,12 @@ fi
 
 _build() {
   # Build
-  docker build --tag="cbrandlehner/homebridge:$VERSION" .
+  docker build --tag="$CONTAINER_NAME:$VERSION" .
 }
 
 _run() {
   # Run (first time)
-  docker run -d --net=host -p 51826:51826 -v /etc/homebridge:/root/.homebridge --name $IMAGE_NAME cbrandlehner/homebridge:$VERSION
+  docker run -d --net=host -p 51826:51826 -v /etc/homebridge:/root/.homebridge --name $IMAGE_NAME $CONTAINER_NAME:$VERSION
 }
 
 _stop() {
@@ -54,7 +55,7 @@ _logs() {
 }
 
 _push() {
-  docker push cbrandlehner/homebridge:$VERSION
+  docker push $CONTAINER_NAME:$VERSION
 }
 
 eval _$ACTION

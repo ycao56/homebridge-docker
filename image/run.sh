@@ -4,13 +4,13 @@ sed -i "s/rlimit-nproc=3/#rlimit-nproc=3/" /etc/avahi/avahi-daemon.conf
 
 cd /root/.homebridge
 package_file="/root/.homebridge/package.json"
-install_file="install.sh"
+install_file="/root/.homebridge/install.sh"
 
 # Try to install packages
 if [ -f "$package_file" ]
 then
 	echo "$package_file found. Going to install additional plugins."
-	npm run install
+	npm install
 else
 	echo "$package_file not found. You can create this file to install additional plugins not already included in the docker image."
 fi
@@ -18,6 +18,7 @@ fi
 # Any more stuff to install?
 if [ -f "$install_file" ]
 then
+  echo "Executing $install_file."
   sh $install_file
 fi
 

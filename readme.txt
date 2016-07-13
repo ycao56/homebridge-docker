@@ -1,4 +1,4 @@
-# Homebridge on Synlogy
+# HomeBridge on Synology
 
 This Docker image helps you to easily setup HomeBridge on your Synology.
 

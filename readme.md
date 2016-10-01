@@ -67,7 +67,7 @@ Once you launch the container, everything will be installed in the back. If an e
 
 ## Command line
 
-There are multiple commands that you can run on the `homebridge.sh` script. Please have a look at that file, it should be self-explaining.
+There are multiple Docker commands that you can run via the `homebridge.sh` script. Please have a look at that file, it should be self-explaining.
 
 ## License
 

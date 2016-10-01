@@ -5,6 +5,7 @@ sed -i "s/rlimit-nproc=3/#rlimit-nproc=3/" /etc/avahi/avahi-daemon.conf
 cd /root/.homebridge
 package_file="/root/.homebridge/package.json"
 install_file="/root/.homebridge/install.sh"
+plugin_folder="/root/.homebridge/plugins"
 
 # Try to install packages
 if [ -f "$package_file" ]
@@ -27,4 +28,4 @@ rm -f /var/run/dbus/pid /var/run/avahi-daemon/pid
 dbus-daemon --system
 avahi-daemon -D
 
-homebridge
+homebridge -P $plugin_folder

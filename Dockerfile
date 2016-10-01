@@ -21,7 +21,7 @@ COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 RUN alias ll='ls -alG'
 
 ##################################################
-# Install homebridge                             #
+# Install Homebridge                             #
 ##################################################
 
 RUN npm install -g homebridge --unsafe-perm
@@ -35,5 +35,5 @@ RUN mkdir -p /var/run/dbus
 
 ADD image/run.sh /root/run.sh
 
-EXPOSE 5353 51826
+EXPOSE 51826
 CMD ["/root/run.sh"]

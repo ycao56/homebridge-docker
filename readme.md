@@ -75,11 +75,11 @@ Once you launch the container, Homebridge and all its dependencies will be insta
 
 ## Command line
 
-There are multiple Docker commands that can be run via the `homebridge.sh` script. Please have a look [at the file](homebridge.sh), it should be self-explaining.
+There are many Docker commands that can be run via the `homebridge.sh` script. Please have a look [at the file](homebridge.sh), it should be self-explaining.
 
 ## License
 
-The [original project from Patrick Busch](https://github.com/patrickbusch/homebridge-docker)) is licensed under Apache License V2 (see [LICENSE](LICENSE)). Changes are under MIT.
+The [original project from Patrick Busch](https://github.com/patrickbusch/homebridge-docker) is licensed under Apache License V2 (see [LICENSE](LICENSE)). Changes are under MIT.
 
 ## Thanks
 - [Chris Brandlehner](https://github.com/cbrandlehner/homebridge-docker)

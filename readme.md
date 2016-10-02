@@ -10,11 +10,17 @@
 
 First of all, login to your Synology DSM, open Docker, and download `marcoraddatz/homebridge` from within the registry.
 
-![Registry Overview.](doc/1.png)
+![Registry Overview.](doc/docker-1.png)
 
 ### 2. Prepare your scripts
 
-Create a dir at `/volume1/docker/homebridge` and put your `config.json` and **either** your `package.json` or `install.sh` in there. Here are two examples of how your setup can look like:
+Create a folder at `/volume1/docker/homebridge` and put your `config.json` and **either** your `package.json` or `install.sh` in there. 
+
+If you're using the DSM File Station, create the folder in the virtual root.
+
+![File Station.](doc/file-station-1.png)
+
+Here are two examples of how your setup files can look like:
 
 #### package.json
 
@@ -49,21 +55,21 @@ A third option is to place your plugins manually under `/volume1/docker/homebrid
 
 ### 3. Start Container
 
-After our plugins are set up, we’re now ready to launch the Docker container.
+After your plugins are configured, you're now ready to launch the Docker container.
 
-![Launch container.](doc/2.png)
+![Launch container.](doc/docker-2.png)
 
-![Click 'Advanced Settings'.](doc/3.png)
+![Click 'Advanced Settings'.](doc/docker-3.png)
 
-![Link local configs.](doc/4.png)
+![Link local configs.](doc/docker-4.png)
 
-Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the configuration files won’t be loaded. Make sure you don’t click "read only".
+Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the configuration files won’t be loaded (within DSM the path is only shown as `/docker/homebridge`. Make sure you don’t click "read only".
 
-![Allow container to work act as host.](doc/5.png)
+![Allow container to work act as host.](doc/docker-5.png)
 
 It's very important to select the *Use the same network as Docker Host* checkbox.
 
-![That's it!](doc/6.png)
+![That's it!](doc/docker-6.png)
 
 Once you launch the container, Homebridge and all its dependencies will be installed. To verify that Homebridge is running or if an error occurs, you can use the container's log (Container → Details → Log) to find out the reason why.
 

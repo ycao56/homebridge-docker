@@ -1,39 +1,40 @@
-FROM nodesource/jessie:5.8.0
+# https://hub.docker.com/r/nodesource/jessie/tags/
+FROM nodesource/jessie:6.7.0
+
 MAINTAINER Marco Raddatz <info@marcoraddatz.com>
 
+# Debugging helpers
 ##################################################
-# Set environment variables                      #
-##################################################
+RUN alias ll='ls -alG'
 
+# Set environment variables
+##################################################
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
 
+# Install tools
 ##################################################
-# Install tools                                  #
+RUN apt-get update; \
+    apt-get install -y apt-utils apt-transport-https; \
+    apt-get upgrade -y; \
+    apt-get install -y locales curl wget; \
+    apt-get install -y libnss-mdns avahi-discover libavahi-compat-libdnssd-dev libkrb5-dev; \
+    apt-get install -y nano vim
+
+# Install Homebridge
 ##################################################
-
-RUN apt-get update
-RUN apt-get install -y apt-utils apt-transport-https locales
-RUN apt-get install -y curl wget git python build-essential make g++ libkrb5-dev vim net-tools nano
-RUN apt-get install -y avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev
-
-COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
-RUN alias ll='ls -alG'
-
-##################################################
-# Install Homebridge                             #
-##################################################
-
 RUN npm install -g homebridge --unsafe-perm
 
+# Final settings
 ##################################################
-# Start                                          #
-##################################################
+COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 
 USER root
 RUN mkdir -p /var/run/dbus
 
 ADD image/run.sh /root/run.sh
 
+# Run container
+##################################################
 EXPOSE 51826
 CMD ["/root/run.sh"]

@@ -12,7 +12,7 @@ First of all, login to your Synology DSM, open Docker and download `marcoraddatz
 
 ### 2. Prepare your scripts
 
-Create a folder via DSM File Station at `/volume1/docker/homebridge` and put your `config.json` and **either** your `package.json` or `install.sh` in there. If you'd like to develop an own plugin or debug Homebridge, also copy the `.env` file.
+Create a folder via DSM File Station at `/volume1/docker/homebridge` and put your `config.json` and **either** your `package.json` or `install.sh` (recommended) in there. If you'd like to develop an own plugin or debug Homebridge, also copy the `.env` file.
 
 ![File Station.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/file-station-1.png)
 
@@ -46,6 +46,7 @@ npm install -g homebridge-nukiio
 npm install -g homebridge-synology
 ```
 
+Note that you can also use this file to install server dependencies. All commands get executed as root.
 
 ### 3. Start Container
 
@@ -57,7 +58,7 @@ After your plugins are configured, you're now ready to launch the Docker contain
 
 ![Link local configs.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-4.png)
 
-Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the configuration files won’t be loaded (within DSM the path is only shown as `/docker/homebridge`. Make sure you don’t click "read only".
+Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the configuration files won’t be loaded (within DSM the path is only shown as `/docker/homebridge`. Make sure you **don’t** click "read only".
 
 ![Allow container to work act as host.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-5.png)
 
@@ -70,7 +71,6 @@ Once you launch the container, Homebridge and all its dependencies will be insta
 ## Command line
 
 There are many Docker commands that can be run via the `homebridge.sh` script. Please have a look [at the file](homebridge.sh), it should be self-explaining.
-
 
 ## Plugin development
 
@@ -87,16 +87,13 @@ Starts Homebridge with plugin support.
 - **debug**  
 Starts Homebridge with plugin support and maximum debugging info.
 
-
 ## License
 
 The is licensed under Apache License V2 (see [LICENSE](LICENSE)).
 
-
 ## Changelog
 
 Changes can be found in the [changelog.md](changelog.md).
-
 
 ## Thanks
 - [Chris Brandlehner](https://github.com/cbrandlehner/homebridge-docker)

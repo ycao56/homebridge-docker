@@ -9,6 +9,7 @@ install_file="/root/.homebridge/install.sh"
 plugin_folder="/root/.homebridge/plugins"
 
 # Update Homebridge
+echo "Updating Homebridge."
 npm update -g homebridge
 
 # Install plugins via package.json

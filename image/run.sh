@@ -8,13 +8,16 @@ package_file="/root/.homebridge/package.json"
 install_file="/root/.homebridge/install.sh"
 plugin_folder="/root/.homebridge/plugins"
 
+# Update Homebridge
+npm update -g homebridge
+
 # Install plugins via package.json
 if [ -f "$package_file" ]
 then
     echo "$package_file found."
     echo "Going to install additional plugins."
 
-	npm install
+    npm install
 else
     echo "$package_file not found."
 fi
@@ -24,7 +27,7 @@ if [ -f "$install_file" ]
 then
     echo "Executing $install_file."
 
-    sh $install_file
+    bash $install_file
 else
     echo "$install_file not found."
 fi

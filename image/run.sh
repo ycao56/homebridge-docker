@@ -15,11 +15,11 @@ then
     echo "Including environment variables from $env_file."
 
     source $env_file
+
+    echo "Environment is set to $HOMEBRIDGE_ENV."
 else
     echo "$env_file not found."
     echo "Default env variables will be used."
-
-    HOMEBRIDGE_ENV=production
 fi
 
 # Update Homebridge
@@ -63,5 +63,5 @@ then
             homebridge ;;
     esac
 else
-    homebridge -P $plugin_folder
+    homebridge
 fi

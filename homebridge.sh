@@ -54,7 +54,7 @@ _rerun() {
 
 # Manually open bash
 _attach() {
-  docker exec -ti $CONTAINER_NAME bash
+  docker exec -ti $CONTAINER_NAME /bin/bash
 }
 
 # Container logs

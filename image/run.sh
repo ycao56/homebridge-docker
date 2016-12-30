@@ -9,6 +9,9 @@ install_file="/root/.homebridge/install.sh"
 package_file="/root/.homebridge/package.json"
 plugin_folder="/root/.homebridge/plugins"
 
+echo "Logged in as:"
+whoami
+
 # Include environment variables
 if [ -f "$env_file" ]
 then
@@ -41,7 +44,7 @@ if [ -f "$install_file" ]
 then
     echo "Installing plugins from $install_file."
 
-    bash $install_file
+    /bin/bash $install_file
 else
     echo "$install_file not found."
 fi

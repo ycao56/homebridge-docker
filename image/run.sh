@@ -4,9 +4,23 @@ sed -i "s/rlimit-nproc=3/#rlimit-nproc=3/" /etc/avahi/avahi-daemon.conf
 
 cd /root/.homebridge
 
-package_file="/root/.homebridge/package.json"
+env_file="/root/.homebridge/.env"
 install_file="/root/.homebridge/install.sh"
+package_file="/root/.homebridge/package.json"
 plugin_folder="/root/.homebridge/plugins"
+
+# Include environment variables
+if [ -f "$env_file" ]
+then
+    echo "Including environment variables from $env_file."
+
+    source $env_file
+else
+    echo "$env_file not found."
+    echo "Default env variables will be used."
+
+    HOMEBRIDGE_ENV=production
+fi
 
 # Update Homebridge
 echo "Updating Homebridge."
@@ -15,8 +29,7 @@ npm update -g homebridge
 # Install plugins via package.json
 if [ -f "$package_file" ]
 then
-    echo "$package_file found."
-    echo "Going to install additional plugins."
+    echo "Installing plugins from $package_file."
 
     npm install
 else
@@ -26,7 +39,7 @@ fi
 # Install plugins via install.sh
 if [ -f "$install_file" ]
 then
-    echo "Executing $install_file."
+    echo "Installing plugins from $install_file."
 
     bash $install_file
 else
@@ -39,4 +52,16 @@ dbus-daemon --system
 avahi-daemon -D
 
 # Start Homebridge
-homebridge -P $plugin_folder
+if [ -z "$HOMEBRIDGE_ENV" ]
+then
+    case "$HOMEBRIDGE_ENV" in
+        "debug" )
+            DEBUG=* homebridge -D -P $plugin_folder ;;
+        "development" )
+            homebridge -P $plugin_folder ;;
+        "production" )
+            homebridge ;;
+    esac
+else
+    homebridge -P $plugin_folder
+fi

@@ -55,7 +55,7 @@ dbus-daemon --system
 avahi-daemon -D
 
 # Start Homebridge
-if [ -z "$HOMEBRIDGE_ENV" ]
+if [ -n "$HOMEBRIDGE_ENV" ]
 then
     case "$HOMEBRIDGE_ENV" in
         "debug" )

@@ -89,7 +89,7 @@ Starts Homebridge with plugin support and maximum debugging info.
 
 ## License
 
-The is licensed under Apache License V2 (see [LICENSE](LICENSE)).
+This project is licensed under Apache License V2 (see [LICENSE](LICENSE)).
 
 ## Changelog
 

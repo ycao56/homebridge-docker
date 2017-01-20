@@ -62,7 +62,7 @@ Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the con
 
 ![Allow container to work act as host.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-5.png)
 
-It's very important to select the *Use the same network as Docker Host* checkbox.
+Don't forget to click the *Use the same network as Docker Host* checkbox!
 
 ![That's it!](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-6.png)
 

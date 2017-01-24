@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0.1
+- Updated version file
+- Removed email from Dockerfile
+- 
+
 ## 2.1
 - Default Homebridge version is v0.4.16
 - Auto-update Homebridge on startup ([\#2](https://github.com/marcoraddatz/homebridge-docker/issues/2))

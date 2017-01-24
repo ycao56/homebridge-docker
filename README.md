@@ -93,7 +93,7 @@ This project is licensed under Apache License V2 (see [LICENSE](LICENSE)).
 
 ## Changelog
 
-Changes can be found in the [changelog.md](changelog.md).
+Changes can be found in the [changelog.md](CHANGELOG.md).
 
 ## Thanks
 - [Chris Brandlehner](https://github.com/cbrandlehner/homebridge-docker)

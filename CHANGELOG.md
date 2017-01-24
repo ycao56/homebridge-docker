@@ -1,9 +1,8 @@
 # Changelog
 
-## 2.1.0.1
+## 2.1.1
 - Updated version file
 - Removed email from Dockerfile
-- 
 
 ## 2.1
 - Default Homebridge version is v0.4.16

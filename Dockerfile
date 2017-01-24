@@ -1,7 +1,7 @@
 # https://hub.docker.com/r/nodesource/jessie/tags/
 FROM nodesource/jessie:6.7.0
 
-MAINTAINER Marco Raddatz <info@marcoraddatz.com>
+MAINTAINER Marco Raddatz
 
 # Debugging helpers
 ##################################################

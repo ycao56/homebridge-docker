@@ -1,8 +1,8 @@
 # Homebridge on Synology
 
-[This Docker image](https://hub.docker.com/r/marcoraddatz/homebridge/) helps you to easily setup [Homebridge](https://github.com/nfarina/homebridge) on your Synology. Make sure you run at least DSM 6, otherwise you [might have to go the harder way](https://marcoraddatz.com/en/2016/07/13/run-homebridge-on-a-synology/) via SSH/shell scripts.
+[This Docker image](https://hub.docker.com/r/marcoraddatz/homebridge/) helps you to easily setup [Homebridge](https://github.com/nfarina/homebridge) on your Synology, but also runs on QNAP devices or Raspberry Pies. If you're using a Synology, please make sure to run at least DSM 6, otherwise you [might have to go the harder way](https://marcoraddatz.com/en/2016/07/13/run-homebridge-on-a-synology/) via SSH/shell scripts.
 
-## Synology
+## Installation (on Synology)
 
 ### 1. Download Image
 
@@ -46,7 +46,7 @@ npm install -g homebridge-nukiio
 npm install -g homebridge-synology
 ```
 
-Note that you can also use this file to install server dependencies. All commands get executed as root.
+Note that you can also use this file to install server dependencies. Since version 2.1 all commands get executed as root.
 
 ### 3. Start Container
 
@@ -66,7 +66,7 @@ Don't forget to click the *Use the same network as Docker Host* checkbox!
 
 ![That's it!](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-6.png)
 
-Once you launch the container, Homebridge and all its dependencies will be installed. To verify that Homebridge is running or if an error occurs, you can use the container's log (Container → Details → Log) to find out the reason why.
+Once you launch (or restart) the container, Homebridge and all its dependencies will be installed. To verify that Homebridge is running or if an error occurs, you can use the container's log (Container → Details → Log) to find out the reason why.
 
 ## Command line
 
@@ -86,6 +86,22 @@ Starts Homebridge without any options.
 Starts Homebridge with plugin support.
 - **debug**  
 Starts Homebridge with plugin support and maximum debugging info.
+
+## Updating Homebridge or its plugins
+
+Homebridge and the plugins automatically get updated to the newest version, whenever the container is (re-) started. If you want to use a specific plugin version, put the info either into the `package.json` or `install.sh` you use.
+
+## Troubleshooting
+
+In case, that Homebridge doesn't run as expected, please follow these steps for debugging:
+
+### 1. Verify your `config.json`
+
+Many issues appear because of invalid JSON. Before you open a ticket, please make sure that the syntax is ok. A good way to verify your config is to use the [jsonlint.com](http://jsonlint.com) validator.
+
+### 2. Make sure that plugins have been disabled
+
+Most issues aren't related to this package, nor to Homebridge --  they are created by outdated plugins or wrong configuration. This package focuses on making Homebridge run as easy as possible. So if Homebridge runs without any plugins, enable them step by step until you find out, which plugin creates the error. You should then contact the plugin's creator.
 
 ## License
 

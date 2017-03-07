@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.2
+- Disable `apt-get update` and `apt-get upgrade` ([\#8](https://github.com/marcoraddatz/homebridge-docker/issues/8))
+
 ## 2.1.1
 - Updated version file
 - Removed email from Dockerfile

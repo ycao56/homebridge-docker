@@ -78,6 +78,8 @@ If you intend to develop a plugin or Homebridge is not running as it's supposed 
 
 ### .env options
 
+All `.env` variables are optional.
+
 #### HOMEBRIDGE_ENV
 
 - **production** _(default)_  
@@ -87,9 +89,9 @@ Starts Homebridge with plugin support.
 - **debug**  
 Starts Homebridge with plugin support and maximum debugging info.
 
-## Updating Homebridge or its plugins
+#### HOMEBRIDGE_VERSION
 
-Homebridge and the plugins automatically get updated to the newest version, whenever the container is (re-) started. If you want to use a specific plugin version, put the info either into the `package.json` or `install.sh` you use.
+To avoid breaks with either new Homebridge releases or iOS updates, you can force the installation of a specific Homebridge version. `HOMEBRIDGE_VERSION` accepts any release tag (f.e "0.4.17") or valid NPM version range.
 
 ## Troubleshooting
 

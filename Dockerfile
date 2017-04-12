@@ -11,7 +11,8 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
 
 # Install tools
-RUN apt-get install -y apt-utils apt-transport-https; \
+RUN apt-get update; \
+    apt-get install -y apt-utils apt-transport-https; \
     apt-get install -y locales curl wget; \
     apt-get install -y libnss-mdns avahi-discover libavahi-compat-libdnssd-dev libkrb5-dev; \
     apt-get install -y nano vim

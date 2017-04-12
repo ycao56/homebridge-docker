@@ -19,15 +19,20 @@ then
 
     source $env_file
 
-    echo "Environment is set to $HOMEBRIDGE_ENV."
+    echo "Environment is set to '$HOMEBRIDGE_ENV'."
 else
     echo "$env_file not found."
     echo "Default env variables will be used."
 fi
 
-# Update Homebridge
-echo "Updating Homebridge."
-npm update -g homebridge
+# (Re-) Install specific Homebridge version to avoid incompatible updates
+# with either Homebridge or iOS.
+if [ $HOMEBRIDGE_VERSION ]
+then
+    echo "Force the installation of Homebridge version '$HOMEBRIDGE_VERSION'."
+
+    npm install -g homebridge@${HOMEBRIDGE_VERSION} --unsafe-perm
+fi
 
 # Install plugins via package.json
 if [ -f "$package_file" ]
@@ -55,7 +60,7 @@ dbus-daemon --system
 avahi-daemon -D
 
 # Start Homebridge
-if [ -n "$HOMEBRIDGE_ENV" ]
+if [ $HOMEBRIDGE_ENV ]
 then
     case "$HOMEBRIDGE_ENV" in
         "debug" )

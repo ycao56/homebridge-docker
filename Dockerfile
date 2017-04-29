@@ -1,23 +1,22 @@
-# https://hub.docker.com/r/nodesource/jessie/tags/
-FROM nodesource/jessie:6.7.0
+FROM node:7.9.0
 
 MAINTAINER Marco Raddatz
-
-# Debugging helpers
-RUN alias ll='ls -alG'
 
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
 
-# Install tools
+# Install dependencies and tools
 RUN apt-get update; \
     apt-get install -y apt-utils apt-transport-https; \
-    apt-get install -y locales curl wget; \
+    apt-get install -y curl wget; \
     apt-get install -y libnss-mdns avahi-discover libavahi-compat-libdnssd-dev libkrb5-dev; \
     apt-get install -y nano vim
 
-# Install Homebridge
+# Install latest Homebridge
+# -------------------------------------------------------------------------
+# You can force a specific version by setting HOMEBRIDGE_VERSION
+# See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
 RUN npm install -g homebridge --unsafe-perm
 
 # Final settings

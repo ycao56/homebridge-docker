@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0
+- Use node native as base image
+- Updated Node.js to version 7.9.0
+- Default Homebridge version is v0.4.19
+
 ## 2.2
 - Default Homebridge version is v0.4.17
 - Disable `apt-get upgrade` ([\#8](https://github.com/marcoraddatz/homebridge-docker/issues/8))

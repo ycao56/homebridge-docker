@@ -9,10 +9,9 @@ install_file="/root/.homebridge/install.sh"
 package_file="/root/.homebridge/package.json"
 plugin_folder="/root/.homebridge/plugins"
 
-echo "Logged in as:"
-whoami
-
 # Include environment variables
+# -------------------------------------------------------------------------
+# See https://github.com/marcoraddatz/homebridge-docker#env-options
 if [ -f "$env_file" ]
 then
     echo "Including environment variables from $env_file."
@@ -27,6 +26,8 @@ fi
 
 # (Re-) Install specific Homebridge version to avoid incompatible updates
 # with either Homebridge or iOS.
+# -------------------------------------------------------------------------
+# See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
 if [ $HOMEBRIDGE_VERSION ]
 then
     echo "Force the installation of Homebridge version '$HOMEBRIDGE_VERSION'."

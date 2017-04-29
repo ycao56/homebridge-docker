@@ -1,9 +1,9 @@
 # Changelog
 
 ## 3.0
-- Use node native as base image
-- Updated Node.js to version 7.9.0
 - Default Homebridge version is v0.4.19
+- Use node as base image
+- Updated Node.js to version 7.9.0
 
 ## 2.2
 - Default Homebridge version is v0.4.17

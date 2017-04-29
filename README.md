@@ -1,8 +1,8 @@
-# Homebridge on Synology
+# Dockerized Homebridge
 
 [This Docker image](https://hub.docker.com/r/marcoraddatz/homebridge/) helps you to easily setup [Homebridge](https://github.com/nfarina/homebridge) on your Synology, but also runs on QNAP devices or Raspberry Pies. If you're using a Synology, please make sure to run at least DSM 6, otherwise you [might have to go the harder way](https://marcoraddatz.com/en/2016/07/13/run-homebridge-on-a-synology/) via SSH/shell scripts.
 
-## Installation (on Synology)
+## Installation (via Synology DSM)
 
 ### 1. Download Image
 
@@ -37,6 +37,8 @@ Here are two examples of how your setup files can look like:
 
 #### install.sh
 
+*Note that you can also use this file to install server dependencies!*
+
 ```shell
 #!/bin/bash
 
@@ -46,11 +48,11 @@ npm install -g homebridge-nukiio
 npm install -g homebridge-synology
 ```
 
-Note that you can also use this file to install server dependencies. Since version 2.1 all commands get executed as root.
+Since version 2.1 all commands get executed as root.
 
 ### 3. Start Container
 
-After your plugins are configured, you're now ready to launch the Docker container.
+After your plugins have been configured, you can launch the Docker container.
 
 ![Launch container.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-2.png)
 
@@ -101,9 +103,13 @@ In case, that Homebridge doesn't run as expected, please follow these steps for 
 
 Many issues appear because of invalid JSON. Before you open a ticket, please make sure that the syntax is ok. A good way to verify your config is to use the [jsonlint.com](http://jsonlint.com) validator.
 
-### 2. Make sure that plugins have been disabled
+### 2. Disable Plugins
 
 Most issues aren't related to this package, nor to Homebridge --  they are created by outdated plugins or wrong configuration. This package focuses on making Homebridge run as easy as possible. So if Homebridge runs without any plugins, enable them step by step until you find out, which plugin creates the error. You should then contact the plugin's creator.
+
+### 3. Open ports
+
+Make sure that ports 5353 and 51826 (both TCP) aren't blocked by your firewall.
 
 ## License
 

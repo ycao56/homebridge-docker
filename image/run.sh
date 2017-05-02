@@ -28,11 +28,11 @@ fi
 # with either Homebridge or iOS.
 # -------------------------------------------------------------------------
 # See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
-if [ $HOMEBRIDGE_VERSION ]
+if [ "$HOMEBRIDGE_VERSION" ]
 then
     echo "Force the installation of Homebridge version '$HOMEBRIDGE_VERSION'."
 
-    npm install -g homebridge@${HOMEBRIDGE_VERSION} --unsafe-perm
+    npm install -g "homebridge@${HOMEBRIDGE_VERSION}" --unsafe-perm
 fi
 
 # Install plugins via package.json
@@ -61,7 +61,7 @@ dbus-daemon --system
 avahi-daemon -D
 
 # Start Homebridge
-if [ $HOMEBRIDGE_ENV ]
+if [ "$HOMEBRIDGE_ENV" ]
 then
     case "$HOMEBRIDGE_ENV" in
         "debug" )

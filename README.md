@@ -16,9 +16,9 @@ Create a folder via DSM File Station at `/volume1/docker/homebridge` and put you
 
 ![File Station.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/file-station-1.png)
 
-Here are two examples of how your setup files can look like:
+Here are two examples of how your setup files may look like:
 
-#### package.json
+#### [package.json](samples/package.json)
 
 ```json
 {
@@ -35,7 +35,7 @@ Here are two examples of how your setup files can look like:
 }
 ```
 
-#### install.sh
+#### [install.sh](samples/install.sh)
 
 *Note that you can also use this file to install server dependencies!*
 
@@ -52,7 +52,7 @@ Since version 2.1 all commands get executed as root.
 
 ### 3. Start Container
 
-After your plugins have been configured, you can launch the Docker container.
+Once the plugins have been set up, the Docker container is ready to launch.
 
 ![Launch container.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-2.png)
 
@@ -60,15 +60,13 @@ After your plugins have been configured, you can launch the Docker container.
 
 ![Link local configs.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-4.png)
 
-Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the configuration files won’t be loaded (within DSM the path is only shown as `/docker/homebridge`. Make sure you **don’t** click "read only".
+Link the `/volume1/docker/homebridge` to `/root/.homebridge`, otherwise, the configuration files won’t be loaded (within DSM the path is only shown as `/docker/homebridge`.
 
-![Allow container to work act as host.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-5.png)
+![Use the same network as Docker host.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-5.png)
 
-Don't forget to click the *Use the same network as Docker Host* checkbox!
+![Apply settings.](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-6.png)
 
-![That's it!](https://raw.githubusercontent.com/marcoraddatz/homebridge-docker/master/doc/docker-6.png)
-
-Once you launch (or restart) the container, Homebridge and all its dependencies will be installed. To verify that Homebridge is running or if an error occurs, you can use the container's log (Container → Details → Log) to find out the reason why.
+Once you launch (or restart) the container, Homebridge and all its dependencies will get installed. To verify that Homebridge is running or if an error occurs, you can use the container's log (Container → Details → Log) to receive further information on the process.
 
 ## Command line
 
@@ -84,11 +82,11 @@ All `.env` variables are optional.
 
 #### HOMEBRIDGE_ENV
 
-- **production** _(default)_  
+- **production** _(default)_
 Starts Homebridge without any options.
-- **development**  
+- **development**
 Starts Homebridge with plugin support.
-- **debug**  
+- **debug**
 Starts Homebridge with plugin support and maximum debugging info.
 
 #### HOMEBRIDGE_VERSION
@@ -110,6 +108,10 @@ Most issues aren't related to this package, nor to Homebridge --  they are creat
 ### 3. Open ports
 
 Make sure that ports 5353 and 51826 (both TCP) aren't blocked by your firewall.
+
+### 4. Adjust paths
+
+If you're using a non-Synology device, you might need to adjust the paths to your config (`/volume1/docker/homebridge`).
 
 ## License
 

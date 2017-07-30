@@ -102,21 +102,29 @@ To avoid breaks with either new Homebridge releases or iOS updates, you can forc
 
 In case, that Homebridge doesn't run as expected, please follow these steps for debugging:
 
-### 1. Verify your `config.json`
+### 1. Avoid multiple Homebridge instances
+
+A lot of issues come through multiple Homebridge instances. Conflicts might require you to completely re-setup Homekit on your iOS devices! **Always make sure, there's only one Homebridge instance running on your network at once!** 
+
+### 2. Verify your `config.json`
 
 Many issues appear because of invalid JSON. Before you open a ticket, please make sure that the syntax is ok. A good way to verify your config is to use the [jsonlint.com](http://jsonlint.com) validator.
 
-### 2. Disable Plugins
+### 3. Disable Plugins
 
 Most issues aren't related to this package, nor to Homebridge --  they are created by outdated plugins or wrong configuration. This package focuses on making Homebridge run as easy as possible. So if Homebridge runs without any plugins, enable them step by step until you find out, which plugin creates the error. You should then contact the plugin's creator.
 
-### 3. Open ports
+### 4. Open ports
 
 Make sure that ports 5353 and 51826 (both TCP) aren't blocked by your firewall.
 
-### 4. Adjust paths
+### 5. Adjust paths
 
 If you're using a non-Synology device, you might need to adjust the paths to your config (`/volume1/docker/homebridge`).
+
+### 6. Search the GitHub issues
+
+Before opening a new [issue on GitHub](https://github.com/marcoraddatz/homebridge-docker/issues), please use the search function to avoid duplicates.
 
 ## License
 

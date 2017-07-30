@@ -42,13 +42,18 @@ Here are two examples of how your setup files may look like:
 ```shell
 #!/bin/bash
 
-npm install -g homebridge-harmonyhub
-npm install -g homebridge-netatmo
-npm install -g homebridge-nukiio
-npm install -g homebridge-synology
+npm install -gs homebridge-harmonyhub
+npm install -gs homebridge-netatmo
+npm install -gs homebridge-nukiio
+npm install -gs homebridge-synology
 ```
 
-Since version 2.1 all commands get executed as root.
+Since version 2.1 all commands get executed as root. As an example, FFmpeg can be installed via adding following commands:
+
+```shell
+apt-get install -y
+npm install -gs homebridge-camera-ffmpeg
+```
 
 ### 3. Start Container
 

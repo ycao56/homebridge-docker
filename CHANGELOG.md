@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1
+- Default Homebridge version is v0.4.22
+- Updated Node.js to version 8.2
+
 ## 3.0
 - Default Homebridge version is v0.4.20
 - Use node as base image

@@ -82,11 +82,11 @@ All `.env` variables are optional.
 
 #### HOMEBRIDGE_ENV
 
-- **production** _(default)_
+- **production** _(default)_  
 Starts Homebridge without any options.
-- **development**
+- **development**  
 Starts Homebridge with plugin support.
-- **debug**
+- **debug**  
 Starts Homebridge with plugin support and maximum debugging info.
 
 #### HOMEBRIDGE_VERSION

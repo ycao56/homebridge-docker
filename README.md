@@ -51,10 +51,12 @@ npm install -gs homebridge-nukiio
 npm install -gs homebridge-synology
 ```
 
-Since version 2.1 all commands get executed as root. For example, FFmpeg can be installed via adding following commands:
+Since version 2.1 all commands get executed as root. For example, FFmpeg can be installed via adding following commands ([source](https://github.com/KhaosT/homebridge-camera-ffmpeg/issues/75#issuecomment-299633284)):
 
 ```shell
-apt-get install -y ffmpeg
+echo 'deb http://ftp.uk.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
+apt-get update
+apt-get -y install ffmpeg
 npm install -gs homebridge-camera-ffmpeg
 ```
 

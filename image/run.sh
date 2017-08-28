@@ -64,9 +64,11 @@ avahi-daemon -D
 if [ "$HOMEBRIDGE_ENV" ]
 then
     case "$HOMEBRIDGE_ENV" in
-        "development_insecure" )
+        "debug-insecure" )
             DEBUG=* homebridge -I -D -P $plugin_folder ;;
-        "production_insecure" )
+        "development-insecure" )
+            homebridge -I -P $plugin_folder ;;
+        "production-insecure" )
             homebridge -I ;;
         "debug" )
             DEBUG=* homebridge -D -P $plugin_folder ;;

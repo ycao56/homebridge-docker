@@ -51,14 +51,7 @@ npm install -gs homebridge-nukiio
 npm install -gs homebridge-synology
 ```
 
-Since version 2.1 all commands get executed as root. For example, FFmpeg can be installed via adding following commands ([source](https://github.com/KhaosT/homebridge-camera-ffmpeg/issues/75#issuecomment-299633284)):
-
-```shell
-echo 'deb http://ftp.uk.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
-apt-get update
-apt-get -y install ffmpeg
-npm install -gs homebridge-camera-ffmpeg
-```
+Since version 2.1 all commands get executed as root, so this is a good place to install missing dependencies.
 
 ### 3. Start Container
 
@@ -98,6 +91,12 @@ Starts Homebridge without any options.
 Starts Homebridge with plugin support.
 - **debug**  
 Starts Homebridge with plugin support and maximum debugging info.
+- **production-insecure**  
+Starts Homebridge with HTTP support.
+- **development-insecure**  
+Starts Homebridge with plugin support and HTTP support.
+- **debug-insecure**  
+Starts Homebridge with plugin support, HTTP support and maximum debugging info.
 
 #### HOMEBRIDGE_VERSION
 
@@ -137,7 +136,7 @@ This project is licensed under Apache License V2 (see [LICENSE](LICENSE)).
 
 ## Changelog
 
-Changes can be found in the [changelog.md](CHANGELOG.md).
+Changes can be found in the [CHANGELOG.md](CHANGELOG.md).
 
 ## Thanks
 - [Chris Brandlehner](https://github.com/cbrandlehner/homebridge-docker)

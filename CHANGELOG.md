@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0
+- Added FFmpeg as default package ([\#23](https://github.com/marcoraddatz/homebridge-docker/pull/23))
+- Added insecure options to enable HTTP requests: `debug-insecure`, `development-insecure`, `production-insecure`  ([\#21](https://github.com/marcoraddatz/homebridge-docker/issues/21), [\#24](https://github.com/marcoraddatz/homebridge-docker/pull/24))
+- Updated Avahi default config
+- Updated Debian Jessie to Debian Stretch ([\#22](https://github.com/marcoraddatz/homebridge-docker/issues/22), [\#23](https://github.com/marcoraddatz/homebridge-docker/pull/23))
+- Disabled Avahi IPv6 ([\#7](https://github.com/marcoraddatz/homebridge-docker/issues/7))
+
 ## 3.1
 - Default Homebridge version is v0.4.22
 - Updated Node.js to version 8.2

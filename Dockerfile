@@ -1,4 +1,4 @@
-FROM node:8.2
+FROM node:8.4-stretch
 
 MAINTAINER Marco Raddatz
 
@@ -7,10 +7,14 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
 
 # Install dependencies and tools
+# For debian stretch should not be needed
+#RUN echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list
+
 RUN apt-get update; \
     apt-get install -y apt-utils apt-transport-https; \
     apt-get install -y curl wget; \
     apt-get install -y libnss-mdns avahi-discover libavahi-compat-libdnssd-dev libkrb5-dev; \
+    apt-get install -y ffmpeg; \
     apt-get install -y nano vim
 
 # Install latest Homebridge

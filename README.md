@@ -122,11 +122,15 @@ Most issues aren't related to this package, nor to Homebridge --  they are creat
 
 Make sure that ports 5353 and 51826 (both TCP) aren't blocked by your firewall.
 
-### 5. Adjust paths
+### 5. Disable IPv6 and Bonjour
+
+Sometimes IPv6 or Synology's Bonjour service are the reason devices cannot be found.
+
+### 6. Adjust paths
 
 If you're using a non-Synology device, you might need to adjust the paths to your config (`/volume1/docker/homebridge`).
 
-### 6. Search the GitHub issues
+### 7. Search the GitHub issues
 
 Before opening a new [issue on GitHub](https://github.com/marcoraddatz/homebridge-docker/issues), please use the search function to avoid duplicates.
 

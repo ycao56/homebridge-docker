@@ -1,4 +1,4 @@
-FROM node:8.4-stretch
+FROM node:8.7-stretch
 
 MAINTAINER Marco Raddatz
 
@@ -18,9 +18,10 @@ RUN apt-get update; \
 # -------------------------------------------------------------------------
 # You can force a specific version by setting HOMEBRIDGE_VERSION
 # See https://github.com/marcoraddatz/homebridge-docker#homebridge_version
+# -------------------------------------------------------------------------
 RUN npm install -g homebridge --unsafe-perm
 
-# Final settings
+# MISC settings
 COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 
 USER root

@@ -98,6 +98,10 @@ Starts Homebridge with plugin support and HTTP support.
 - **debug-insecure**  
 Starts Homebridge with plugin support, HTTP support and maximum debugging info.
 
+#### HOMEBRIDGE_TIMEZONE
+
+Manually set a timezone. (This environment variable is equal to Linux' TZ variable.) See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for valid options. If no timezone is set, UTC will be used.
+
 #### HOMEBRIDGE_VERSION
 
 To avoid breaks with either new Homebridge releases or iOS updates, you can force the installation of a specific Homebridge version. `HOMEBRIDGE_VERSION` accepts any release tag (f.e "0.4.17") or valid NPM version range.

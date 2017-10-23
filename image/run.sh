@@ -53,6 +53,14 @@ else
     echo "$install_file not found."
 fi
 
+# Manually set timezone
+if [ "$HOMEBRIDGE_TIMEZONE" ]
+then
+    rm /etc/localtime
+    ln -s /usr/share/zoneinfo/${HOMEBRIDGE_TIMEZONE} /etc/localtime
+    date
+fi
+
 rm -f /var/run/dbus/pid /var/run/avahi-daemon/pid
 
 dbus-daemon --system

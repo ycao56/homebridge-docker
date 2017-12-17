@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.2
+- Added option to set DiskStation hostname ([\#7](https://github.com/marcoraddatz/homebridge-docker/issues/7))
+
 ## 4.1
 - Default Homebridge version is v0.4.32
 - Updated Node.js to version 9.2

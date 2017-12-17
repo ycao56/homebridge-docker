@@ -59,6 +59,18 @@ then
     rm /etc/localtime
     ln -s /usr/share/zoneinfo/${HOMEBRIDGE_TIMEZONE} /etc/localtime
     date
+
+    echo "Updated timezone to '$HOMEBRIDGE_TIMEZONE'.".
+fi
+
+# Fix for Synology DSM
+# See https://github.com/oznu/docker-homebridge/commit/8e5ef5e7b3480b50f59dc3717f493d27f4070df1
+# See https://github.com/oznu/docker-homebridge/issues/35
+if [ "$DS_HOSTNAME" ]
+then
+    sed -i "s/.*host-name.*/host-name=${DS_HOSTNAME}/" /etc/avahi/avahi-daemon.conf
+
+    echo "Avahi hostname set to '$DS_HOSTNAME'."
 fi
 
 rm -f /var/run/dbus/pid /var/run/avahi-daemon/pid

@@ -126,11 +126,11 @@ Most issues aren't related to this package, nor to Homebridge --  they are creat
 
 Make sure that ports 5353 and 51826 (both TCP) aren't blocked by your firewall.
 
-### 5. Disable IPv6 and Bonjour
+### 5. Set a hostname (Synology only)
 
-Sometimes IPv6 or Synology's Bonjour service are the reason devices cannot be found.
+To avoid conflicts with other devices, set the `DS_HOSTNAME` variable in the `.env` file to your DiskStation's server name (uncomment it first!). The value should exactly match the server name as shown under `Synology DSM Control Panel` -> `Info Centre` -> `Server name`. It should contain no spaces or special characters.
 
-### 6. Adjust paths
+### 6. Adjust paths (Non-Synology only)
 
 If you're using a non-Synology device, you might need to adjust the paths to your config (`/volume1/docker/homebridge`).
 

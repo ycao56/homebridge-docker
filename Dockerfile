@@ -1,4 +1,4 @@
-FROM node:10.11-stretch
+FROM node:10.15-stretch
 
 MAINTAINER Marco Raddatz
 

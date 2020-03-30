@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.7
+- Default Homebridge version is v0.4.53
+- Updated Node.js to version 12.16
+
 ## 4.6
 - Default Homebridge version is v0.4.50
 - Updated Node.js to version 10.16

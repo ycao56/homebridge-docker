@@ -1,6 +1,6 @@
-FROM node:12.16.2-stretch
+FROM node:12.18-stretch
 
-MAINTAINER Marco Raddatz
+LABEL maintainer="Marco Raddatz"
 
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive

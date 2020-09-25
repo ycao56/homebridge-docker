@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [5.1.1] - 2020-09-25
 - Use "release it" for releases
 
 ## [5.1.0]

@@ -1,6 +1,9 @@
 # Changelog
 
-## 5.1
+## [Unreleased]
+- Use "release it" for releases
+
+## [5.1.0]
 - Default Homebridge version is v1.2.3
 - Updated Node.js to version 12.18
 

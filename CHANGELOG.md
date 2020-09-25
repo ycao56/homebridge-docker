@@ -1,5 +1,8 @@
 # Changelog
 
+## [Unreleased]
+- Fixed version file
+
 ## [5.1.1] - 2020-09-25
 - Use "release it" for releases
 

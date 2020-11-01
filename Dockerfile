@@ -1,4 +1,4 @@
-FROM node:12.18-stretch
+FROM node:12-stretch
 
 LABEL maintainer="Marco Raddatz"
 

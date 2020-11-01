@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Fixed version file
+- Updated Node.js to version 12.x
 
 ## [5.1.1] - 2020-09-25
 - Use "release it" for releases

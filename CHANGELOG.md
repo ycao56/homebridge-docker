@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased]
+- Added stale bot config
 - Fixed version file
 - Updated Node.js to version 12.x
 - Updated npm dependencies

@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [5.2.0] - 2020-11-02
 - Added stale bot config
 - Fixed version file
 - Updated Node.js to version 12.x

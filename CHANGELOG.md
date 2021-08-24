@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [5.3.0] - 2021-08-24
 - Default Homebridge version is v1.3.4
 - Updated Node.js to version 16.x
 - Updated npm dependencies
